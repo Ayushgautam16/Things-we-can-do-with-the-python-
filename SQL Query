@@ -1,0 +1,131 @@
+create databse students
+
+create table students (
+name char(30),
+age INT,
+grade char(1),
+student_id INT
+);
+
+insert into students(students_id, name, age, grade)
+values (11, 'ayush', 23, 'A'),
+       (12, 'akash', 22, 'B'),
+       (13, 'anjali', 24, 'C')
+update students
+set name = 'Anmol'
+where age =24 ;
+select * from students;
+
+1	"Anmol                         "	24	"B"
+2	"ayush                         "	23	"A"
+11	"ayush                         "	23	"A"
+12	"akash                         "	22	"B"
+13	"anjali                        "	24	"C"
+
+
+update students
+set students_id = 2
+where age =23 ;
+select * from students;
+
+delete from students
+where name = 'ayush';
+select * from students;
+
+-- CRUD operation done in sql
+
+-- numeric data types 
+smallint
+INT
+bigint 
+decimal(p,s)
+numeric(p,s)
+real
+double precision
+serial
+
+character/ string data types
+
+create table strings (
+code char(5),
+emaill varchar(100),
+bip text
+);
+
+insert into strings
+values('dd22', 'ayush@gmail.com', 'hello i am ayush i am learning sql');
+
+select * from strings
+is_active boolean 
+
+-- primary key and all constraints
+
+create table random(
+id int primary key,
+name varchar(199) not null,
+email text unique,
+created_at date default now(),
+age int check(age>=18)
+
+
+);
+
+
+************************************************
+having ----->>>> to filter the aggregated groups (used after grup   by clause)
+
+order by ----->  sort the result in ascending or descending order 
+
+limit --->    limit the number of rows returned 
+
+as ---->   renamed colums or tables temporarily(allaising)
+
+distinct ---->  return only unique/distinct values
+
+select * from products order by price DESC; 
+
+practice these query and check the data what comes from this  learning from clauses.
+
+
+CREATE TABLE products(
+  product_id SERIAL PRIMARY KEY,
+  name VARCHAR(100) NOT NULL,
+  sku_code CHAR(8) UNIQUE NOT NULL,
+  price NUMERIC(10,2) CHECK (price > 0),
+  stock_quantity INT DEFAULT 0 CHECK (stock_quantity >= 0),
+  is_available BOOLEAN DEFAULT TRUE,
+  category TEXT NOT NULL,
+  adden_on DATE DEFAULT CURRENT_DATE,
+  last_update TIMESTAMP DEFAULT NOW()
+);
+
+INSERT INTO products (name, sku_code, price , stock_quantity, is_available, category)
+VALUES
+('Wireless Mouse', 'WM123456', 699.99, 50, TRUE, 'Electronics'),
+('Bluetooth Speaker', 'BS234567', 1499.00, 30, TRUE, 'Electronics'),
+('Laptop Stand', 'LS345678', 799.50, 20, TRUE, 'Accessories'),
+('USB-C Hub', 'UC456789', 1299.99, 15, TRUE, 'Accessories'),
+('Notebook', 'NB567890', 99.99, 100, TRUE, 'Stationery'),
+('Pen Set', 'PS678901', 199.00, 200, TRUE, 'Stationery'),
+('Coffee Mug', 'CM789012', 299.00, 75, TRUE, 'Home & Kitchen'),
+('LED Desk Lamp', 'DL890123', 899.00, 40, TRUE, 'Home & Kitchen'),
+('Yoga Mat', 'YM901234', 499.00, 25, TRUE, 'Fitness'),
+('Water Bottle', 'WB012345', 349.00, 60, TRUE, 'Fitness');
+
+select * from products
+
+select category, count(*) from products 
+group by category 
+HAVING count (*) >1 ;
+
+select * from products order by price DESC;  
+
+
+select * from products limit 3;
+
+
+select name as item_name, price as item_price from products;   #name change krdo
+
+select distinct category from products;
+
+

@@ -1,0 +1,50 @@
+✅ Q: How did you design your bidding system DB?
+
+Answer:
+“I designed tables like:**
+
+Users
+Products
+Bids
+Orders
+
+Relationships:
+
+One user → many bids
+One product → many bids
+
+Used foreign keys to maintain integrity.”
+
+✅ Q: How do you fetch highest bid?
+SELECT product_id, MAX(bid_amount)
+FROM bids
+
+GROUP BY product_id;
+
+✅ Q: How do you optimize queries?
+Answer:
+
+Indexing
+Avoid SELECT *
+Proper joins
+Use LIMIT
+🔥 4. Scenario-Based Questions
+✅ Q: Find duplicate records
+SELECT name, COUNT(*)
+FROM users
+GROUP BY name
+HAVING COUNT(*) > 1;
+
+
+✅ Q: Get last 5 records
+SELECT * FROM orders
+ORDER BY created_at DESC
+LIMIT 5;
+✅ Q: Pagination
+SELECT * FROM products
+LIMIT 10 OFFSET 20;
+🔥 5. HR + Technical Combo Question
+✅ Q: Where did you use SQL in your project?
+
+Best Answer (use this):
+“In my bidding-based procurement system, I used PostgreSQL to manage users, bids, and products. I implemented joins to fetch bid details, aggregate queries to find highest bids, and indexing to improve performance.”
