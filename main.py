@@ -102,6 +102,10 @@
 # for p in range(1, 11):
 #     print(p)
 
+
+
+
+
 # for p in range(100, 11, -2):
 #     print(p)    
 
@@ -111,10 +115,10 @@
 # for i in range (len(a)):
 #     print(a[i])
 
-# a = "sheriyans is cool and i am learning python"
-# for i in a:
-#     # if i == "s":
-#         print(i)
+a = "sheriyans is cool and i am learning python"
+for i in a:
+    # if i == "s":
+        print(i)
 
 
 # for i in range (1, 11):
