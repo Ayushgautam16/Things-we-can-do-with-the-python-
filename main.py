@@ -117,8 +117,8 @@
 
 a = "sheriyans is cool and i am learning python"
 for i in a:
-    # if i == "s":
-        print(i)
+    # # if i == "s":
+    #     print(i)
 
 
 # for i in range (1, 11):
