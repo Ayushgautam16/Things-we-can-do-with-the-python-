@@ -115,8 +115,8 @@
 # for i in range (len(a)):
 #     print(a[i])
 
-a = "sheriyans is cool and i am learning python"
-for i in a:
+# a = "sheriyans is cool and i am learning python"
+# for i in a:
     # # if i == "s":
     #     print(i)
 
