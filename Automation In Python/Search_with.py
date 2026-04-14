@@ -6,6 +6,7 @@ import webbrowser
 
 # define the main window 
 root = tk.Tk()
+
 root.title("Yours Social Media Paglu")
 
 # adding the background color
