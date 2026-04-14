@@ -517,3 +517,14 @@
 
 
 
+# dsa
+
+l = [2,23,42,2,44,555,3,33,5,6]
+
+largest = l[0]
+index = 0
+for i in range(len(l)):
+    if l[i]> largest:
+        largest = l[i]
+        index = i
+print("the largest number is {largest} at index {index}".format(largest=largest, index=index))
